@@ -79,6 +79,7 @@ MAX_TRIES = 3
 
 load_data()
 
+os.system('cls')
 print('Hi!', end=' ')
 
 while True:
