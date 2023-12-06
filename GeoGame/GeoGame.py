@@ -78,6 +78,7 @@ NUMBER_OF_ROUNDS = 5
 MAX_TRIES = 3
 
 load_data()
+
 print('Hi!', end=' ')
 
 while True:
