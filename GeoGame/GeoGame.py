@@ -61,6 +61,8 @@ def load_data():
 NUMBER_OF_ROUNDS = 5
 MAX_TRIES = 3
 
+load_data()
+
 while True:
     print('Hi! Which continent would you like to play?')
         
