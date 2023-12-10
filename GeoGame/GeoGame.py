@@ -21,13 +21,13 @@ def play_game(selection):
         
         if NUMBER_OF_ROUNDS == 0:
             if selection < 7:
-                rounds = len(list(world_data[continents[selection]]))
+                rounds = len(list(world_data[continents[selection - 1]]))
             else: 
                 for k, v in world_data.items():
                     rounds += len(v)
         else:
             if selection < 7:
-                rounds = min(len(list(world_data[continents[selection]])), NUMBER_OF_ROUNDS)
+                rounds = min(len(list(world_data[continents[selection - 1]])), NUMBER_OF_ROUNDS)
             else:
                 for k, v in world_data.items():
                     rounds += len(v)
@@ -65,16 +65,14 @@ def play_game(selection):
                 if guess_distance > 80:
                     print(f'Correct! Then capital of {country} is {capital}.\n')
                     break
-                else:
-                    if MAX_TRIES != 0:
+                elif MAX_TRIES != 0:
                         current_try += 1
-                    elif MAX_TRIES > 1:
                         print('Try again.')
+                                         
             
         else:
             print(f'The correct answer was {capital}.\n')
        
-
 def list_continents():
     for index, continent in enumerate(continents):
         print(f'{index+1}) {continent}')
@@ -157,6 +155,7 @@ while True:
         play_again = input('Would you like to play again? Y/N  ').upper()
 
         if play_again != 'Y':
+            clear_terminal()
             break
         else:
             clear_terminal()
@@ -165,4 +164,5 @@ while True:
     elif selection == 9:
         changes_settings()
     elif selection == 0:
+        clear_terminal()
         break
